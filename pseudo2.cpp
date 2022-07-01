@@ -1,4 +1,4 @@
-void *__fastcall pseudo2_dumped(DWORD *a1, int a2)
+void *__fastcall pseudo2_dumped(DWORD *a1, int a2) /* orignally dumped from IDA */
 {
   int v3;
   unsigned int v5;
@@ -9,7 +9,7 @@ void *__fastcall pseudo2_dumped(DWORD *a1, int a2)
 
   switch (a2)
   {
-    case -10002:
+    case -10002: // lua definitions
       v9 = (unsigned int)(a1 + 7) ^ a1[7];
       *(DWORD *)(v9 + 1536) = a1[16];
       *(DWORD *)(v9 + 1548) = 6;
@@ -27,7 +27,7 @@ void *__fastcall pseudo2_dumped(DWORD *a1, int a2)
       return (void *)((v5 ^ *(DWORD *)v5) + 1536);
     case -10000:
       return (void *)(((unsigned int)(a1 + 7) ^ a1[7]) + 1552);
-    default:
+    default: // if no matching lua index's were found
       v3 = **(DWORD **)(a1[4] + 4);
       if ( -10002 - a2 > *(unsigned __int8 *)(v3 + 4) )
         return 0;
